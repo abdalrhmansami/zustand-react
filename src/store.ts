@@ -4,7 +4,7 @@ import { devtools, persist } from "zustand/middleware";
 let peopleStore: any = (set: any) => ({
   people: ["Abood", "Osama", "Momen"],
   addPerson: (person: string) =>
-    set((state: any) => ({
+    set((state: { people: any }) => ({
       people: [...state.people, person],
     })),
 });
@@ -12,7 +12,7 @@ let peopleStore: any = (set: any) => ({
 let settingsStore: any = (set: any) => ({
   dark: false,
   toggleDarkMode: () =>
-    set((state: any) => ({
+    set((state: { dark: any }) => ({
       dark: !state.dark,
     })),
 });

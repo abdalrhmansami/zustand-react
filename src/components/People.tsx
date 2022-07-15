@@ -2,7 +2,7 @@ import React from "react";
 import { usePeopleStore } from "../store";
 
 const People = () => {
-  const people = usePeopleStore((state: any) => state.people);
+  const people = usePeopleStore((state: { people: any }) => state.people);
 
   return (
     <>

@@ -3,7 +3,9 @@ import { usePeopleStore } from "../store";
 
 const AddPpl = () => {
   const inputRef: any = useRef();
-  const addPerson = usePeopleStore((state: any) => state.addPerson);
+  const addPerson = usePeopleStore(
+    (state: { addPerson: any }) => state.addPerson
+  );
 
   const addPpl = () => {
     addPerson(inputRef.current.value);
